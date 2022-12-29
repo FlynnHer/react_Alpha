@@ -1,7 +1,8 @@
 import MyProps from './MyProps';
 import MyUseState from './hooks/MyUseState'
 import FormEvent from './hooks/FormEvent';
-import ListItem from './hooks/ListItem';
+import ListItem from './ListItem';
+import ListItemHook from './hooks/ListItemHook';
 
 function Alpha () {
   return (
@@ -13,7 +14,8 @@ function Alpha () {
       <FormEvent />
       <hr/>
       <ListItem />
-
+      <hr/>
+      <ListItemHook />
     </div>
   )
 }
