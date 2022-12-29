@@ -9,7 +9,6 @@ const ListItemHook = ()=> {
   ]);
   const [ inputText, setInputText ] = useState('');
   const [ nextId, setNextId ] = useState(5);
-  const nameList = names.map(name=> <li key={name.id}> {name.text} </li>);
 
   const onChange = e=> setInputText(e.target.value);
   const onClick = ()=> {
@@ -25,11 +24,25 @@ const ListItemHook = ()=> {
     setNames(nextList);
     setInputText('')
   }
+  const onDoubleClick = (id)=> {
+    const nextNames = names.filter(name=> name.id !==id);
+    setNames(nextNames);
+  }
+  const onKeyDown = (e)=> {
+    if(e.key==='Enter') {
+      onClick();
+    }
+  }
   
+  const nameList = names.map(name=> (
+    <li key={name.id} onDoubleClick={()=> onDoubleClick(name.id)}>
+      {name.text}
+    </li>
+  ));
   return (
     <div>
       <ul>{nameList}</ul>
-      <input value={inputText} onChange={onChange} />
+      <input value={inputText} onChange={onChange} onKeyDown={onKeyDown} />
       <button onClick={onClick}>Add</button>
     </div>
   )
