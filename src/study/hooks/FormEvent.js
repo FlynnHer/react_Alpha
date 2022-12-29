@@ -40,7 +40,7 @@ const FormEvent = ()=> {
       <input type="text" name="id" placeholder="사용자 ID" value={id} onChange={onChange} />
       <br />
       Pass :
-      <input type="text" name="pass" placeholder="암호" value={pass} onChange={onChange} onKeyPress={onKeyPress} />
+      <input type="text" name="pass" placeholder="암호" value={pass} onChange={onChange} onKeyDown={onKeyPress} />
       <br />
       <button onClick={onClick}>Check</button>
     </div>
