@@ -1,7 +1,9 @@
 const MyProps = props => {
   return (
     <div>
-      안녕하세요, My Name is {props.name||"무 명"}.
+      <h1>Hellow</h1>
+      props.name is {props.name||"무 명"}.<br/>
+      children is {props.children}
     </div>
   )
 }
