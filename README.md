@@ -1,4 +1,5 @@
 # 리액트 공부하기
+$ npm install
 
 # Getting Started with Create React App
 
